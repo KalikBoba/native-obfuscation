@@ -1,0 +1,22 @@
+{
+    "native-check":"https://essenceclient.fun",
+    "protection":"https://essenceclient.fun",
+    "transformers":{
+        "Remapper":"true",
+        "CFM-Encryption":"false",
+        "Opcodes":"false",
+        "NativeObjector":"false",
+        "NativeMathOperations":"false"
+        },
+        "remapper-paths":[
+            "colonialobfuscator",
+            "beame",
+            "module",
+            "setting",
+            "vipentry",
+            "events",
+            "relake",
+            "net/",
+            "wtf"
+        ]
+}

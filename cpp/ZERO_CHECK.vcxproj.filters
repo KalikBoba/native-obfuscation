@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\youki\OneDrive\Рабочий стол\Native2Fortness-main\cpp\CMakeFiles\7cb11bb1f349c8e4a0c4b2274aec8b0e\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2F96A4BB-3833-3490-90EB-BF31F8377865}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

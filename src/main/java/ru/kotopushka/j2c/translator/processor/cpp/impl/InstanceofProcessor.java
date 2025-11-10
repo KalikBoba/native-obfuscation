@@ -1,0 +1,33 @@
+package ru.kotopushka.j2c.translator.processor.cpp.impl;
+
+import org.objectweb.asm.tree.AbstractInsnNode;
+import org.objectweb.asm.tree.MethodNode;
+import org.objectweb.asm.tree.TypeInsnNode;
+import ru.kotopushka.j2c.translator.processor.cpp.protection.ReferenceSnippetGenerator;
+import ru.kotopushka.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.kotopushka.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
+
+
+public class InstanceofProcessor extends BaseProcessor {
+
+    public InstanceofProcessor() {
+        super(INSTANCEOF);
+    }
+
+    @Override
+    public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
+        if (insn instanceof TypeInsnNode) {
+            context.output().begin(method);
+            context.output().pushMethodLine("cstack%s.i = cstack%s.l == nullptr ? false : env->IsInstanceOf(cstack%s.l, %s);"
+                    .formatted(context.getStackPointer().peek() - 1, context.getStackPointer().peek() - 1,
+                            context.getStackPointer().peek() - 1, ReferenceSnippetGenerator.generateJavaClassReference(context, method, (((TypeInsnNode) insn).desc)))
+            );
+            context.output().end(method);
+        }
+    }
+
+    @Override
+    public int updateStackPointer(AbstractInsnNode insnNode, int currentPointer) {
+        return currentPointer;
+    }
+}
